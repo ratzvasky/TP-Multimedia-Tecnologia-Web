@@ -1,2 +1,2 @@
 # TP-Multimedia-Tecnologia-Web
-1º trabalho pratico de Multimédia e Tecnologia Web
+Primeiro trabalho pratico da UC de Multimédia e Tecnologia Web.
