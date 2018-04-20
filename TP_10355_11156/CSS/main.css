@@ -1,4 +1,58 @@
 html, body {
   width: 100%;
   height: 100%;
+  background-color: whitesmoke;
+}
+
+.header
+{
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.header-leftBox
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.header-centerBox
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.header-rightBoxFirstHalf
+{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+}
+
+.header-rightBoxSecondHalf
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.Kiril
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.Ruben
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
