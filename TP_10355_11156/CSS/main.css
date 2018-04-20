@@ -1,58 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+} /* removes all different margin and padding between browser's*/
+ 
 html, body {
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
+  background-color:  #566573 ;
 }
 
-.header
+header
 {
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: #eaecee;
 }
 
-.header-leftBox
+header section
 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  
 }
 
-.header-centerBox
+header section h1
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+  font-size: 12px;
+  color:  #566573 ;
+  font-family: Arial, Helvetica, sans-serif ;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
-.header-rightBoxFirstHalf
+header section img
 {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  background-color: white;
+  margin-left: 4px;
+  margin-right: 2px;
+  border-radius: 50%;
 }
 
-.header-rightBoxSecondHalf
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
 
-.Kiril
-{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
 
-.Ruben
-{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-}
