@@ -46,7 +46,7 @@ function getExternal() {
   });*/
 
   $.ajax({
-    url: 'https://jsonplaceholder.typicode.com/comments',
+    url: url,
     data: {},
     type: 'GET',
     crossDomain: true,

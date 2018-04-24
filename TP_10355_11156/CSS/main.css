@@ -164,6 +164,15 @@ body .main .gifBox .gifShowBox
 
 }
 
+.gifShowBox .gif
+{
+  width: 100px;
+  height: 100px;
+
+  background-position: center;
+  background-size: contain;
+}
+
 
 
 footer {
@@ -201,3 +210,4 @@ footer .info{
 footer .info{
   color: #566573;
 }
+
