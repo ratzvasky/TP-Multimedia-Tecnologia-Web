@@ -140,6 +140,7 @@ body .main .gifBox .gifButtons
   background: #52FFA8;
   border-radius: 50% ;
   border: none;
+  cursor: pointer;
 }
 
 .gifButtons .trendingButton, .sportsButton, .funnyButton 
@@ -150,6 +151,7 @@ body .main .gifBox .gifButtons
   background: white;
   border: 2px #52FFA8 solid;
   text-align: center;
+  cursor: pointer;
 }
 
 
@@ -158,19 +160,21 @@ body .main .gifBox .gifShowBox
  {
   width: 60%;
   height: 75%;
+  
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid red;
+ 
+
 
 }
 
-.gifShowBox .gif
+.gifShowBox  img
 {
-  width: 100px;
-  height: 100px;
+  
+width: 200px;
+height: 200px;
+margin: 5px;
 
-  background-position: center;
-  background-size: contain;
 }
 
 
