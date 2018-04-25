@@ -22,30 +22,30 @@ function searchGIF() {
 
 
 
-// Fuction that will request 10 trending  gif's
+// Fuction that will request 12 trending  gif's
 function getTrendingGif() {
-  var url = "https://api.giphy.com/v1/gifs/trending?api_key=" + api_key + "&limit=10&rating=G";
+  var url = "https://api.giphy.com/v1/gifs/trending?api_key=" + api_key + "&limit=12&rating=G";
 
   $.getJSON(url, function (response) { addGifs(response); });
 }
 
 
 
-// Fuction that will request 10 gif's with a given category
+// Fuction that will request1210 gif's with a given category
 function getCategoryGif(category) {
-  var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + category + "&limit=10&offset=0&rating=G&lang=en";
+  var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + category + "&limit=12&offset=0&rating=G&lang=en";
 
   $.getJSON(url, function (response) { addGifs(response); });
 }
 
 
-// Fuction that will request 10 random gif's 
+// Fuction that will request 12 random gif's 
 function getRandomGif(category) {
   var url = "https://api.giphy.com/v1/gifs/random?api_key=yykxhG0faSdVIZ1j5zdSZ6l0gxCHbJiQ&tag=&rating=G"
 
   $(".gifShowBox").empty();
 
-  for (i = 0; i < 10; i++) { $.getJSON(url, function (response) { addGif(response); }); }
+  for (i = 0; i < 12; i++) { $.getJSON(url, function (response) { addGif(response); }); }
 }
 
 

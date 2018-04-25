@@ -162,12 +162,12 @@ body .main .gifBox .gifShowBox
 .gifShowBox  img
 {
   width: 200px;
-  height: 200px;
   margin: 5px;
   
 }
 
-footer {
+footer 
+{
   background-color:	#DCDCDC;
 }
 
@@ -198,5 +198,12 @@ footer .socialBox{
 footer .info{
   color: #566573;
 }
+
+footer .wave
+{
+  display: flex;
+  align-content: stretch;
+}
+
 
 
