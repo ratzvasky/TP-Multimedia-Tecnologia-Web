@@ -78,11 +78,17 @@ body .main .searchBox .search
  width: 30%;
 }
 
+body .main .searchBox .search img
+{
+  width:15px;
+  height:15px;
+}
+
 .search .searchBar 
 {
   padding-left: 8px;
   width: 100%;
-  height: 20px;
+  height: 30px;
   border-radius: 15px 0px 0px 15px;
   border: 2px;
   color: #DCDCDC;
@@ -96,7 +102,7 @@ body .main .searchBox .search
 .searchButton
  {
   border: 2px ;
-  background: #52FFA8;
+  background: #52FFA8; 
   text-align: center;
   color: #fff;
   border-radius: 0px 15px 15px 0px;
@@ -129,41 +135,61 @@ body .main .gifBox .gifButtons
 {
   width: 35px;
   height: 35px;
-  background: #52FFA8;
+  background: #333333; /* # 52FFA8*/
   border-radius: 50% ;
   border: none;
   cursor: pointer;
+}
+
+.gifButtons .refreshButton:hover
+{
+  background-color: #000000; /* Green */
 }
 
 .gifButtons .trendingButton, .sportsButton, .funnyButton 
 {
   width: 70px;
   height: 35px;
-  color:  #566573 ;
-  background: white;
-  border: 2px #52FFA8 solid;
+  color:  white ;
+  background: #333333;
+  border: 2px #333333 solid;
   text-align: center;
   cursor: pointer;
+  padding: 2px;
+}
+
+.gifButtons img
+{
+  padding: 2px;
+}
+
+.gifButtons .trendingButton:hover, .sportsButton:hover, .funnyButton:hover
+{
+  background-color: #000000;
+  border: 2px #262626 solid;
 }
 
 body .main .gifBox .gifShowBox 
 {
   display: flex;
   align-self: auto;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: center;
   overflow: auto;
-  width: 75%;
+  /*width: 75%;*/
+  min-width: 850px;
   height: 75%;
-  display: flex;
   flex-wrap: wrap;
+  
 }
 
 .gifShowBox  img
 {
   width: 200px;
-  margin: 5px;
-  
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 footer 
