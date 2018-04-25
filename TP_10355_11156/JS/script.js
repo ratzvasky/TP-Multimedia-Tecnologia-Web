@@ -1,3 +1,4 @@
+
 var api_key = "yykxhG0faSdVIZ1j5zdSZ6l0gxCHbJiQ";
 
 document.getElementsByClassName("searchButton")[0].addEventListener("click", searchGIF);
@@ -13,7 +14,7 @@ document.getElementsByClassName("refreshButton")[0].addEventListener("click", fu
 
 // Function that will make a search using giphy api
 function searchGIF() {
-  var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + document.getElementsByClassName("searchBar")[0].value + "&limit=10&offset=0&rating=G&lang=en";
+  var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + document.getElementsByClassName("searchBar")[0].value + "&limit=12&offset=0&rating=G&lang=en";
 
   console.log(url); // debug
 
@@ -31,7 +32,7 @@ function getTrendingGif() {
 
 
 
-// Fuction that will request1210 gif's with a given category
+// Fuction that will request 12 gif's with a given category
 function getCategoryGif(category) {
   var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + category + "&limit=12&offset=0&rating=G&lang=en";
 
