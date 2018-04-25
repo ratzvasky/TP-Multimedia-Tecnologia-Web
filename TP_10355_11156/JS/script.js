@@ -45,14 +45,13 @@ function getRandomGif(category) {
 
   $(".gifShowBox").empty();
 
-  for (i = 0; i < 10; i++) { $.getJSON(url, function (response) { addGif(response); });}
+  for (i = 0; i < 10; i++) { $.getJSON(url, function (response) { addGif(response); }); }
 }
 
 
 
 // Function that will add one gif to the page
-var addGif = function (response)
- {
+var addGif = function (response) {
   var newGif = document.createElement('img');
   newGif.src = response.data.images.original.url;
 
@@ -63,8 +62,7 @@ var addGif = function (response)
 
 
 // Function that will show gifs on the page
-var addGifs = function (response) 
-{
+var addGifs = function (response) {
   console.log(response);
 
   $(".gifShowBox").empty();
