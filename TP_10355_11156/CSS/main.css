@@ -50,7 +50,7 @@ header .headerSideRight img
 body .main
 {
   height: 100%;
-  width: 100%;  
+  width: 100%; 
 }
 
 body .main .searchBox
@@ -157,24 +157,24 @@ body .main .gifBox .gifButtons
 
 
 body .main .gifBox .gifShowBox 
- {
-  width: 60%;
+{
+  display: flex;
+  align-self: auto;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  width: 75%;
   height: 75%;
-  
   display: flex;
   flex-wrap: wrap;
- 
-
-
 }
 
 .gifShowBox  img
 {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
   
-width: 200px;
-height: 200px;
-margin: 5px;
-
 }
 
 
@@ -188,7 +188,7 @@ footer .infoBox{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  height: 70px;
+  height: 60px;
   bottom: 0px;
   left: 0px;
   right: 0px;
