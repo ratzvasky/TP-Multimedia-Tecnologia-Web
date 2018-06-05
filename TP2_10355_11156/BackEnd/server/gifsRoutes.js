@@ -31,7 +31,7 @@ function GifRouter ()
     // Envia um gif
     .post(function (req, res, next) 
     {
-        console.log('Faz um pedido Post');
+        console.log('Faz um pedido Post de um gif');
         let body = req.body;
         Gifs.create(body)
           .then(function() 
@@ -46,7 +46,7 @@ function GifRouter ()
           {
              console.log('Erro no pedido Post!');
              err.status = err.status || 500;
-             res.status(401).send('O post não correu bem!');
+             res.status(401).send('O post não correu bem!'); // Unauthorized
              next();
           });
       });
@@ -60,14 +60,57 @@ function GifRouter ()
         Players.findById(gifId)
           .then((gif) => {
             res.status(200);
-            res.send(player);
+            res.send(gif);
             next();
           })
+
           .catch((err) =>
            {
-            res.status(404);
+            res.status(404); // Not found
             next();
           });
       })
 
+      // Update a um gif pelo ID
+      .put(function (req, res, next)
+       {
+        console.log('Put de um gif pelo ID!');
+        let gifId = req.params.gifId;
+        let body = req.param.body;
+
+        Gifs.update(gifId, body)
+        .then((gif) => 
+        {
+          res.status(200);
+          res.send(gif);
+          next();
+        })
+        .catch((err) => 
+        {
+          res.status(404); // Not found
+          next();
+        }); 
+    })
+
+    .delete(function (req, res, next) {
+      console.log('Remove de um Gif pelo ID');
+      let gifId = req.params.gifId;
+      Gifs.removeById(gifId)
+        .then(() => 
+        {
+          console.log('Gif Removido com sucesso!');
+          res.status(200);
+          next();
+        })
+        .catch((err) =>
+         {
+          res.status(404);
+          next();
+        });
+    });
+
+    return router;
 }
+
+// Exporta a função GifRouter
+module.exports = GifRouter;
