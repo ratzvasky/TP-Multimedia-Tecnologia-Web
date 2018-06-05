@@ -1,0 +1,18 @@
+{
+  "name": "backendtp2",
+  "version": "1.0.0",
+  "description": "Segundo TP2 de MTW - IPCA",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rúben Guimarães e Kyrylo Yavorenko",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4",
+    "nodemon": "^1.17.5"
+  }
+}

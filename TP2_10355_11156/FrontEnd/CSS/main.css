@@ -1,0 +1,232 @@
+*{
+  margin: 0;
+  padding: 0;
+} /* removes all different margin and padding between browser's*/
+ 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+header
+{
+  display: flex;
+  justify-content: space-around;
+  background-color:  	#DCDCDC;
+}
+
+header section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+header section h1, a
+{
+  font-size: 12px;
+  color:  #566573 ;
+  font-family: Arial, Helvetica, sans-serif ;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+header section img
+{
+  margin-top: 2px;
+  margin-left: 4px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+
+}
+
+header .headerSideRight img
+{
+  border-radius: 50%;
+}
+
+body .main
+{
+  height: 100%;
+  width: 100%; 
+}
+
+body .main .searchBox
+{
+  height: 20%;
+  width: 100%;
+  background-color:  #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body .main .searchBox h1
+{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif ;
+}
+
+body .main .searchBox .search
+{
+ margin-top: 20px;
+ display: flex;
+ flex-direction: row;
+ width: 30%;
+}
+
+body .main .searchBox .search img
+{
+  width:15px;
+  height:15px;
+}
+
+.search .searchBar 
+{
+  padding-left: 8px;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px 0px 0px 15px;
+  border: 2px;
+  color: #DCDCDC;
+}
+
+/* Change text color, when clicked */
+.search .searchBar:focus{
+  color: #52FFA8;
+}
+
+.searchButton
+ {
+  border: 2px ;
+  background: #52FFA8; 
+  text-align: center;
+  color: #fff;
+  border-radius: 0px 15px 15px 0px;
+  cursor: pointer;
+  width: 100px;
+}
+
+body .main .gifBox
+{ 
+  height: 80%;
+  width: 100%;
+  background-color: #111111 ;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+}
+
+body .main .gifBox .gifButtons
+{
+  height: 20%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gifButtons .refreshButton
+{
+  width: 35px;
+  height: 35px;
+  background: #333333; /* # 52FFA8*/
+  border-radius: 50% ;
+  border: none;
+  cursor: pointer;
+}
+
+.gifButtons .refreshButton:hover
+{
+  background-color: #000000; /* Green */
+}
+
+.gifButtons .trendingButton, .sportsButton, .funnyButton 
+{
+  width: 70px;
+  height: 35px;
+  color:  white ;
+  background: #333333;
+  border: 2px #333333 solid;
+  text-align: center;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.gifButtons img
+{
+  padding: 2px;
+}
+
+.gifButtons .trendingButton:hover, .sportsButton:hover, .funnyButton:hover
+{
+  background-color: #000000;
+  border: 2px #262626 solid;
+}
+
+body .main .gifBox .gifShowBox 
+{
+  display: flex;
+  align-self: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: center;
+  overflow: auto;
+  /*width: 75%;*/
+  min-width: 850px;
+  height: 75%;
+  flex-wrap: wrap;
+  
+}
+
+.gifShowBox  img
+{
+  width: 200px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+footer 
+{
+  background-color:	#DCDCDC;
+}
+
+footer .infoBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color:	#DCDCDC;
+}
+
+footer .socialBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color:	#DCDCDC;
+}
+
+footer .info{
+  color: #566573;
+}
+
+footer .wave
+{
+  display: flex;
+  align-content: stretch;
+}

@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.itemlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemlist > .name {
+  border-left: 2px solid black;
+  flex: 2;
+}
+
+.itemlist > .field {
+  flex: 1;
+  color:blue;
+}
+
+.itemlist > .removeItem {
+  flex: 1;
+  color: red;
+}
