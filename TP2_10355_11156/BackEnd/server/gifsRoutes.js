@@ -114,6 +114,112 @@ function Router ()
     });
 
 
+    /*
+    *  Routes para categorias
+    */
+
+    // Pede todos os categorias
+    router.route('/categorias')
+    .get(function (req, res, next) 
+    {
+      console.log('Get todas as categorias.');
+      Categorias.findAll()
+        .then((categorias)=>
+         {
+          res.send(categorias);
+          next();
+        })
+        .catch((err) => 
+        {
+          next();
+        });
+    })
+
+    // Envia uma categoria
+    .post(function (req, res, next) 
+    {
+        console.log('Faz um pedido Post de uma categoria');
+        let body = req.body;
+        Categorias.create(body)
+          .then(function() 
+          {
+            console.log(body);
+            console.log('Post efectuado com sucesso!');
+            res.status(200);
+            res.send(body);
+            next();
+          })
+
+          .catch((err) => 
+          {
+             console.log('Erro no pedido Post!');
+             err.status = err.status || 500;
+             res.status(401).send('O post não correu bem!'); // Unauthorized
+             next();
+          });
+      });
+
+      // Redefine uma nova route e faz um pedido Get pelo ID da categoria
+      router.route('/categorias/:categoriaId')
+      .get(function (req, res, next) {
+        console.log('Pede uma categoria pelo ID');
+        let categoriaId = req.params.categoriaId; 
+        console.log(categoriaId);
+        Categorias.findById(categoriaId)
+          .then((categorias) => {
+            res.status(200);
+            res.send(categorias);
+            next();
+          })
+
+          .catch((err) =>
+           {
+            res.status(404); // Not found
+            next();
+          });
+      })
+
+      // Update a uma categoria pelo ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! REVER !!! 
+      .put(function (req, res, next)
+       {
+        console.log('Put de um categoria pelo ID!');
+        let gifcategoriaIdId = req.params.categoriaId;
+        let body = req.param.body;
+
+        Categorias.update(categoriaId, body)
+        .then((categoria) => 
+        {
+          res.status(200);
+          res.send(gif);
+          next();
+        })
+        .catch((err) => 
+        {
+          res.status(404); // Not found
+          next();
+        }); 
+    })
+
+    // Apaga uma categoria dado um ID
+    .delete(function (req, res, next) {
+      console.log('Remove de uma categoria pelo ID');
+      let categoriaId = req.params.categoriaId;
+      Categorias.removeById(categoriaId)
+        .then(() => 
+        {
+          console.log('Categoria removida com sucesso!');
+          res.status(200);
+          next();
+        })
+        .catch((err) =>
+         {
+          res.status(404);
+          next();
+        });
+    });
+
+
+
 
     return router;
 }

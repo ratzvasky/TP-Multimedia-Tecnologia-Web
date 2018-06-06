@@ -10,7 +10,7 @@ let GifSchema = new Schema({
 
 
 // Cria um modelo para usarmos o schemma
-let Gif = mongoose.model('User', GifSchema);
+let Gif = mongoose.model('GifCollection', GifSchema);
 
 
 module.exports = Gif;

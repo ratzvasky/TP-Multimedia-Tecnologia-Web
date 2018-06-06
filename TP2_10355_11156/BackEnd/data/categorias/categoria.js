@@ -8,7 +8,7 @@ let CategoriaSchema = new Schema({
 
 
 // Cria um modelo para usarmos o schemma
-let Categoria = mongoose.model('User', CategoriaSchema);
+let Categoria = mongoose.model('CategoriasCollection', CategoriaSchema);
 
 
 module.exports = Categoria;

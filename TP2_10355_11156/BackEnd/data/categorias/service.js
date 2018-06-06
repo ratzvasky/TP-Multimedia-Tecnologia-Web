@@ -108,11 +108,11 @@ function CategoriaService(CategoriaModel)
   
 
     // Guarda uma nova categoria
-    function save(newPlayer)
+    function save(newCategoria)
      {
       return new Promise(function (resolve, reject)
        {
-        CategoriaModel.save(function (err) 
+        newCategoria.save(function (err) 
         {
           if (err) reject(err);
   
