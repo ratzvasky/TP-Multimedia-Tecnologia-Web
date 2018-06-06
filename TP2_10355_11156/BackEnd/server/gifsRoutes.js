@@ -11,6 +11,11 @@ function GifRouter ()
     router.use(bodyParser.json({ limit: '100mb' }));
     router.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
+    router.route('/')
+    .get(function(req, res) {
+      res.send('hello world');
+    });
+
     // Pede todos os gifs
     router.route('/gifs')
     .get(function (req, res, next) 
