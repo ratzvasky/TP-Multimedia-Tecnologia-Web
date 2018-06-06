@@ -1,9 +1,10 @@
 const express = require('express');
 const Gifs = require('../data/gifs');
+const Categorias = require('../data/Categorias');
 const bodyParser = require('body-parser');
 
 
-function GifRouter ()
+function Router ()
 {
     let router = express();
 
@@ -11,10 +12,6 @@ function GifRouter ()
     router.use(bodyParser.json({ limit: '100mb' }));
     router.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
-    router.route('/')
-    .get(function(req, res) {
-      res.send('hello world');
-    });
 
     // Pede todos os gifs
     router.route('/gifs')
@@ -41,6 +38,7 @@ function GifRouter ()
         Gifs.create(body)
           .then(function() 
           {
+            console.log(body);
             console.log('Post efectuado com sucesso!');
             res.status(200);
             res.send(body);
@@ -62,7 +60,7 @@ function GifRouter ()
         console.log('Pede um Gif pelo ID');
         let gifId = req.params.gifId; // !!!! VERIFICAR SE O ULTIMO CAMPO ESTÁ CORRECTO
         console.log(gifId);
-        Players.findById(gifId)
+        Gifs.findById(gifId)
           .then((gif) => {
             res.status(200);
             res.send(gif);
@@ -76,7 +74,7 @@ function GifRouter ()
           });
       })
 
-      // Update a um gif pelo ID
+      // Update a um gif pelo ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! REVER !!! 
       .put(function (req, res, next)
        {
         console.log('Put de um gif pelo ID!');
@@ -97,6 +95,7 @@ function GifRouter ()
         }); 
     })
 
+    // Apaga um Gif dado um ID
     .delete(function (req, res, next) {
       console.log('Remove de um Gif pelo ID');
       let gifId = req.params.gifId;
@@ -114,8 +113,10 @@ function GifRouter ()
         });
     });
 
+
+
     return router;
 }
 
 // Exporta a função GifRouter
-module.exports = GifRouter;
+module.exports = Router;

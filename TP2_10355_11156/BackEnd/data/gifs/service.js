@@ -108,11 +108,11 @@ function GifService(GifModel)
   
 
     // Guarda um novo gif
-    function save(newPlayer)
+    function save(newGif)
      {
       return new Promise(function (resolve, reject)
        {
-        GifModel.save(function (err) 
+        newGif.save(function (err) 
         {
           if (err) reject(err);
   
