@@ -5,9 +5,9 @@ document.getElementsByClassName("searchButton")[0].addEventListener("click", sea
 
 document.getElementsByClassName("trendingButton")[0].addEventListener("click", getTrendingGif);
 
-document.getElementsByClassName("sportsButton")[0].addEventListener("click", function () { getCategoryGif("sports"); });
+document.getElementsByClassName("sportsButton")[0].addEventListener("click", function () { getCategoryGif("5b184aec835b9944e823d767"); });
 
-document.getElementsByClassName("funnyButton")[0].addEventListener("click", function () { getCategoryGif("funny"); });
+document.getElementsByClassName("funnyButton")[0].addEventListener("click", function () { getCategoryGif("5b184aef835b9944e823d768"); });
 
 document.getElementsByClassName("refreshButton")[0].addEventListener("click", function () { location.reload(); });
 
@@ -15,32 +15,31 @@ document.getElementsByClassName("refreshButton")[0].addEventListener("click", fu
 // Function that will make a search using giphy api
 function searchGIF() {
   var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + document.getElementsByClassName("searchBar")[0].value + "&limit=10&offset=0&rating=G&lang=en";
-
-  console.log(url); // debug
-
+  
   $.getJSON(url, function (response) { addGifs(response); });
 }
 
 
 
-// Fuction that will request 10 trending  gif's
+// Fuction that will request dog gif's
 function getTrendingGif() {
-  var url = "https://api.giphy.com/v1/gifs/trending?api_key=" + api_key + "&limit=10&rating=G";
+  var url = "http://localhost:3000/gifs/gifs/cat/5b184ab6835b9944e823d766";
 
-  $.getJSON(url, function (response) { addGifs(response); });
+$.getJSON(url, function (response) { addGifsAPI(response); });
 }
 
 
 
 // Fuction that will request 10 gif's with a given category
 function getCategoryGif(category) {
-  var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + category + "&limit=10&offset=0&rating=G&lang=en";
+  var url = "http://localhost:3000/gifs/gifs/cat/" + category;
 
-  $.getJSON(url, function (response) { addGifs(response); });
+
+  $.getJSON(url, function (response) { addGifsAPI(response); });
 }
 
 
-// Fuction that will request 12 random gif's 
+// Fuction that will request 10 random gif's 
 function getRandomGif(category) {
   var url = "https://api.giphy.com/v1/gifs/random?api_key=yykxhG0faSdVIZ1j5zdSZ6l0gxCHbJiQ&tag=&rating=G"
 
@@ -61,6 +60,22 @@ var addGif = function (response) {
 }
 
 
+// Function that will show gifs on the page
+var addGifsAPI = function (response) {
+  console.log(response);
+
+  $(".gifShowBox").empty();
+
+  response.map(function (gif) 
+  {
+    var newGif = document.createElement('img');
+    newGif.src = gif.url;
+
+    var gifShowBox = document.getElementsByClassName('gifShowBox')[0];
+    gifShowBox.appendChild(newGif);
+  });
+}
+
 
 // Function that will show gifs on the page
 var addGifs = function (response) {
@@ -78,9 +93,55 @@ var addGifs = function (response) {
 }
 
 
+// Function that will resquest button names
+function getButtonsNames()
+{
+  var url = "http://localhost:3000/gifs/categorias";
+
+  $.getJSON(url, function (response) { changeButtonsValue(response); });
+}
+
+
+// Functions that will change buttons name
+function changeButtonsValue(response)
+ {
+
+  var button1 = document.getElementsByClassName("trendingButton")[0]; 
+  var button2 = document.getElementsByClassName("sportsButton")[0]; 
+  var button3 = document.getElementsByClassName("funnyButton")[0]; 
+
+  console.log(response[0].descricao);
+  console.log(response);
+ 
+  button1.innerText = response[0].descricao;
+  button2.innerText = response[1].descricao;
+  button3.innerText = response[2].descricao;
+}
+
+
+/*
+// Function that will add new buttons to the gifButtons class
+var addButtons = function (response) {
+  console.log(response);
+
+  response.map(function (button) {
+    var newButton = document.createElement('button');
+    newButton.value = button.descricao;
+
+    var gifButtons = document.getElementsByClassName('gifButtons')[0];
+    gifButtons.appendChild(newButton);
+  });
+}
+*/
+
+
 // Fuction that will run when the document is ready
-var main = function () {
+var main = function ()
+ {
+  getButtonsNames();
+
   console.log("Document is ready!");
+
   getRandomGif();
 };
 

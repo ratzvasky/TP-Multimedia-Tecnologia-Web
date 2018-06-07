@@ -69,7 +69,7 @@ function CategoriaService(CategoriaModel)
      {
       return new Promise(function (resolve, reject)
        {
-
+        console.log(id);
         CategoriaModel.findByIdAndUpdate(id, values, function (err, user) 
         {
           if (err) reject(err);

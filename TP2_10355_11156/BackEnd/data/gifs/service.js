@@ -5,6 +5,7 @@ function GifService(GifModel)
      {
       create,
       findAll,
+      findAllId,
       findOne,
       findById,
       update,
@@ -33,9 +34,22 @@ function GifService(GifModel)
         });
       });
     }
+
+  // Devolve todos os gifs com o Id de categoria
+  function findAllId(id) {
+    return new Promise(function (resolve, reject)
+     {
+      GifModel.find({ categoriaId: id}, function (err, users) 
+      {
+        if (err) reject(err);
+
+        resolve(users);
+      });
+    });
+  }
+
   
-  
-    // Devolve um gif pela descricão
+    // Devolve um gif pelo id
     function findOne(option = {}) 
     {
       return new Promise(function (resolve, reject) {
@@ -49,7 +63,7 @@ function GifService(GifModel)
     }
   
 
-    // Encontra um gif pelo id
+    // Encontra um gif pelo ID
     function findById(id)
      {
       return new Promise(function (resolve, reject) 
@@ -58,6 +72,8 @@ function GifService(GifModel)
          {
           if (err) reject(err);
 
+          console.log(id);
+          console.log(user);
           resolve(user);
         });
       });
