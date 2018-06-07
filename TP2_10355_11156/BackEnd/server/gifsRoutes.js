@@ -92,7 +92,7 @@ function Router() {
     .put(function (req, res, next) {
       console.log('Put de um gif pelo ID!');
       let gifId = req.params.gifId;
-      let body = req.param.body;
+      let body = req.body;
 
       Gifs.update(gifId, body)
         .then((gif) => {
@@ -182,7 +182,7 @@ function Router() {
         });
     })
 
-    // Update a uma categoria pelo ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! REVER !!! 
+    // Update a uma categoria pelo ID 
     .put(function (req, res, next) {
       console.log('Put de um categoria pelo ID!');
       let categoriaId = req.params.categoriaId;

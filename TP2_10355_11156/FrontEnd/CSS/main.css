@@ -146,10 +146,10 @@ body .main .gifBox .gifButtons
   background-color: #000000; /* Green */
 }
 
-.gifButtons .trendingButton, .sportsButton, .funnyButton 
+.gifButtons .trendingButton, .sportsButton, .funnyButton, .addGif, .addCategory
 {
   width: 70px;
-  height: 35px;
+  height: 40px;
   color:  white ;
   background: #333333;
   border: 2px #333333 solid;
@@ -163,7 +163,7 @@ body .main .gifBox .gifButtons
   padding: 2px;
 }
 
-.gifButtons .trendingButton:hover, .sportsButton:hover, .funnyButton:hover
+.gifButtons .trendingButton:hover, .sportsButton:hover, .funnyButton:hover, .addGif:hover, .addCategory:hover
 {
   background-color: #000000;
   border: 2px #262626 solid;

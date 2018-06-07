@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+} /* removes all different margin and padding between browser's*/
+ 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+header
+{
+  display: flex;
+  justify-content: space-around;
+  background-color:  	#DCDCDC;
+}
+
+header section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+header section h1, a
+{
+  font-size: 12px;
+  color:  #566573 ;
+  font-family: Arial, Helvetica, sans-serif ;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+header section img
+{
+  margin-top: 2px;
+  margin-left: 4px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+
+}
+
+header .headerSideRight img
+{
+  border-radius: 50%;
+}
+
+body .main
+{
+  height: 100%;
+  width: 100%; 
+}
+
+body .main .tittleBox
+{
+  height: 20%;
+  width: 100%;
+  background-color:  #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body .main .tittleBox h1
+{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif ;
+}
+
+body .main .tittleBox .search
+{
+ margin-top: 20px;
+ display: flex;
+ flex-direction: row;
+ width: 30%;
+}
+
+
+body .main .addBox
+{ 
+  height: 80%;
+  width: 100%;
+  background-color: #111111 ;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: row;
+}
+
+
+.addBox .addCategoryButton, .addGifButton
+{
+  width: 120px;
+  height: 45px;
+  color:  white ;
+  background: #333333;
+  border: 2px #333333 solid;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+}
+
+
+.addBox .addCategoryButton:hover, addGifButton:hover
+{
+  background-color: #000000;
+  border: 2px #262626 solid;
+}
+
+.addBox .categoryName, .gifName, .gifURL, .gifCategory
+{
+  margin-right: 10px;
+  padding: 2px;
+  width: 250px;
+  height: 40px;
+}
+
+
+
+footer 
+{
+  background-color:	#DCDCDC;
+}
+
+footer .infoBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color:	#DCDCDC;
+}
+
+footer .socialBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color:	#DCDCDC;
+}
+
+footer .info{
+  color: #566573;
+}
+
+footer .wave
+{
+  display: flex;
+  align-content: stretch;
+}
