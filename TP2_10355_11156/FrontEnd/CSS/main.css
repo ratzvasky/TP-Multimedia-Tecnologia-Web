@@ -124,7 +124,7 @@ body .main .gifBox
 body .main .gifBox .gifButtons
 {
   height: 20%;
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -146,7 +146,7 @@ body .main .gifBox .gifButtons
   background-color: #000000; /* Green */
 }
 
-.gifButtons .trendingButton, .sportsButton, .funnyButton, .addGif, .addCategory
+.gifButtons  button
 {
   width: 70px;
   height: 40px;
@@ -178,8 +178,8 @@ body .main .gifBox .gifShowBox
   align-items: flex-start;
   align-content: center;
   overflow: auto;
-  /*width: 75%;*/
-  min-width: 850px;
+  width: 80%;
+  /*min-width: 850px;*/
   height: 75%;
   flex-wrap: wrap;
   
@@ -220,6 +220,7 @@ footer .socialBox{
   right: 0px;
   background-color:	#DCDCDC;
 }
+
 
 footer .info{
   color: #566573;

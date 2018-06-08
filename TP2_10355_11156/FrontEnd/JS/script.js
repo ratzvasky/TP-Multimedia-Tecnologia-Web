@@ -3,17 +3,13 @@ var api_key = "yykxhG0faSdVIZ1j5zdSZ6l0gxCHbJiQ";
 
 document.getElementsByClassName("searchButton")[0].addEventListener("click", searchGIF);
 
-document.getElementsByClassName("trendingButton")[0].addEventListener("click", getTrendingGif);
-
-document.getElementsByClassName("sportsButton")[0].addEventListener("click", function () { getCategoryGif("5b184aec835b9944e823d767"); });
-
-document.getElementsByClassName("funnyButton")[0].addEventListener("click", function () { getCategoryGif("5b184aef835b9944e823d768"); });
-
 document.getElementsByClassName("refreshButton")[0].addEventListener("click", function () { location.reload(); });
 
 
+
 // Function that will make a search using giphy api
-function searchGIF() {
+function searchGIF() 
+{
   var url = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + document.getElementsByClassName("searchBar")[0].value + "&limit=10&offset=0&rating=G&lang=en";
   
   $.getJSON(url, function (response) { addGifs(response); });
@@ -30,7 +26,7 @@ $.getJSON(url, function (response) { addGifsAPI(response); });
 
 
 
-// Fuction that will request 10 gif's with a given category
+// Fuction that will request gif's with a given category
 function getCategoryGif(category) {
   var url = "http://localhost:3000/gifs/gifs/cat/" + category;
 
@@ -65,15 +61,35 @@ var addGifsAPI = function (response) {
   console.log(response);
 
   $(".gifShowBox").empty();
-
-  response.map(function (gif) 
+  
+  for (let index = 0; index < 7; index++)
   {
+    console.log(index);
     var newGif = document.createElement('img');
-    newGif.src = gif.url;
+    newGif.src = response[index].url;
 
     var gifShowBox = document.getElementsByClassName('gifShowBox')[0];
     gifShowBox.appendChild(newGif);
-  });
+  }
+}
+
+
+// Function that will show gifs on the page
+var addGifsAPIRandom = function (response) {
+  console.log(response);
+
+  $(".gifShowBox").empty();
+
+  for (let index = 0; index < 7; index++)
+  {
+    console.log(index);
+    var newGif = document.createElement('img');
+    newGif.src = response[Math.floor(Math.random() * response.length) + 0  ].url;
+
+    var gifShowBox = document.getElementsByClassName('gifShowBox')[0];
+    gifShowBox.appendChild(newGif);
+  }
+
 }
 
 
@@ -93,12 +109,12 @@ var addGifs = function (response) {
 }
 
 
-// Function that will resquest button names
+// Function that will request button names
 function getButtonsNames()
 {
   var url = "http://localhost:3000/gifs/categorias";
 
-  $.getJSON(url, function (response) { changeButtonsValue(response); });
+  $.getJSON(url, function (response) { console.log(response);changeButtonsValue(response); });
 }
 
 
@@ -106,16 +122,16 @@ function getButtonsNames()
 function changeButtonsValue(response)
  {
 
-  var button1 = document.getElementsByClassName("trendingButton")[0]; 
-  var button2 = document.getElementsByClassName("sportsButton")[0]; 
-  var button3 = document.getElementsByClassName("funnyButton")[0]; 
+  for (let index = 0; index < response.length; index++) 
+  {
+    var $new_button = $("<button>");
+    console.log(response[index]._id);
+    $new_button.attr("onClick", "getCategoryGif('" + response[index]._id + "');"); // getCategoryGif.bind(null, response[index]._id));
+    console.log(response[index]._id);
+    $new_button.text(response[index].descricao);
+    $(".gifButtons").append($new_button);
+  }
 
-  console.log(response[0].descricao);
-  console.log(response);
- 
-  button1.innerText = response[0].descricao;
-  button2.innerText = response[1].descricao;
-  button3.innerText = response[2].descricao;
 }
 
 
@@ -134,6 +150,15 @@ var addButtons = function (response) {
 }
 */
 
+// Fuction that will request all the gif's from the BD
+function getAllGifs(category) {
+  var url = "http://localhost:3000/gifs/gifs"
+
+  $(".gifShowBox").empty();
+
+  $.getJSON(url, function (response) { addGifsAPIRandom(response); });
+}
+
 
 // Fuction that will run when the document is ready
 var main = function ()
@@ -142,7 +167,7 @@ var main = function ()
 
   console.log("Document is ready!");
 
-  getRandomGif();
+  getAllGifs();
 };
 
 
