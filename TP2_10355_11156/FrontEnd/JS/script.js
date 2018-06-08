@@ -125,9 +125,7 @@ function changeButtonsValue(response)
   for (let index = 0; index < response.length; index++) 
   {
     var $new_button = $("<button>");
-    console.log(response[index]._id);
     $new_button.attr("onClick", "getCategoryGif('" + response[index]._id + "');"); // getCategoryGif.bind(null, response[index]._id));
-    console.log(response[index]._id);
     $new_button.text(response[index].descricao);
     $(".gifButtons").append($new_button);
   }

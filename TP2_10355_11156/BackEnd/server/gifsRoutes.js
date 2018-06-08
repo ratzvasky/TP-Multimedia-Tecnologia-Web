@@ -30,6 +30,7 @@ function Router() {
     .post(function (req, res, next) {
       console.log('Faz um pedido Post de um gif');
       let body = req.body;
+      console.log(req.body);
       Gifs.create(body)
         .then(function () {
           console.log(body);

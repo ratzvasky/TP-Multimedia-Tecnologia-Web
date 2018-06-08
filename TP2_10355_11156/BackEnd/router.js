@@ -9,7 +9,6 @@ function initialize()
 
   api.use('/gifs', GifAPI()); 
 
-
   return api;
 }
 
