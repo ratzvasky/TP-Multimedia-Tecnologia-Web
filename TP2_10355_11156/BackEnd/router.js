@@ -1,3 +1,8 @@
+ /*
+  * Scrip que efectua a ligação entre o index.js e as routes
+  * 
+  */ 
+
 const express = require('express');
 let GifAPI = require('./server/gifsRoutes');
 

@@ -1,9 +1,13 @@
+ /*
+  * Scrip principal do backend do projecto
+  *
+  */
+
 // Inicialização de pacotes
 const http = require('http');
 const express = require('express');
 var cors = require('cors');
 var mongoose = require('mongoose');
-
 
 
 const hostname = '127.0.0.1'
@@ -26,6 +30,5 @@ mongoose.connect(config.db);
 
 const server = http.Server(aplicacao);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+
+server.listen(port, hostname, () => {console.log(`Server running at http://${hostname}:${port}/`);});

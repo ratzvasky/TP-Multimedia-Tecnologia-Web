@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"dbWeb.categoriascollections"},{"v":2,"unique":true,"key":{"descricao":1},"name":"descricao_1","ns":"dbWeb.categoriascollections","background":true}],"uuid":"1751879f849a4e8e81e66cd3286dfdff"}

@@ -1,3 +1,9 @@
+ /*
+  * Diversas routes do projecto
+  * 
+  */
+ 
+  
 const express = require('express');
 const Gifs = require('../data/gifs');
 const Categorias = require('../data/Categorias');

@@ -1,0 +1,7 @@
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath C:\Users\Rúben\Documents\GitHub\TP-Multimedia-Tecnologia-Web\TP2_10355_11156\BackEnd\db
+
+cd C:\Program Files\MongoDB\Server\3.6\bin\
+
+mongo.exe
+
+https://www.tutorialspoint.com/mongodb/mongodb_create_database.htm
