@@ -1,5 +1,5 @@
 
-var api_key = "yykxhG0faSdVIZ1j5zdSZ6l0gxCHbJiQ";
+var api_key = "apiKey"; // Change to Giphy APIKEY
 
 document.getElementsByClassName("searchButton")[0].addEventListener("click", searchGIF);
 
